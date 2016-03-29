@@ -1,0 +1,20 @@
+{
+    "name": "UserFrosting - configuration module",
+    "type": "library",
+    "authors" : [
+        {
+            "name": "Alexander Weissman",
+            "homepage": "https://alexanderweissman.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/config": "5.2.*",
+        "vlucas/phpdotenv": "2.2.0"
+    },
+    "autoload": {
+        "classmap" : [
+            "./"
+        ]
+    }
+}
