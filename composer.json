@@ -1,5 +1,5 @@
 {
-    "name": "UserFrosting - configuration module",
+    "name": "userfrosting/config",
     "type": "library",
     "authors" : [
         {
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "classmap" : [
-            "./"
+            "Config.php"
         ]
     }
 }
