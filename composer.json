@@ -13,9 +13,9 @@
         "vlucas/phpdotenv": "2.2.0"
     },
     "autoload": {
-        "classmap" : [
-            "Config.php"
-        ]
+        "psr-4": {
+            "UserFrosting\\Config\\": "Config"
+        }
     },
     "minimum-stability" : "dev"
 }

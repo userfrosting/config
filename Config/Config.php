@@ -1,6 +1,6 @@
 <?php
 
-namespace UserFrosting;
+namespace UserFrosting\Config;
 
 use Illuminate\Config\Repository;
 
