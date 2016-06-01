@@ -1,17 +1,27 @@
 <?php
 
+/**
+ * Config
+ * 
+ * Flexible configuration class, which can load and merge config settings from multiple files and sources.
+ *
+ * @package   userfrosting/config
+ * @link      https://github.com/userfrosting/config
+ * @author    Alexander Weissman
+ * @license   https://github.com/userfrosting/UserFrosting/blob/master/licenses/UserFrosting.md (MIT License) 
+ * @link      http://blog.madewithlove.be/post/illuminate-config-v5/
+ */
 namespace UserFrosting\Config;
 
 use Illuminate\Config\Repository;
-
-/**
- * Flexible configuration class, which can load and merge config settings from multiple files and sources.
- *
- * @link http://blog.madewithlove.be/post/illuminate-config-v5/
- */
+use UserFrosting\Support\Exception\FileNotFoundException;
+ 
 class Config extends Repository
 {
 
+    /**
+     * @var array an array of paths to search for config files.
+     */
     protected $paths = [];
 
     /**
@@ -21,9 +31,8 @@ class Config extends Repository
      */    
     public function addPath($path)
     {
-        // TODO: throw exception if not exists
         if (!is_dir($path)) {
-            return [];
+            throw new FileNotFoundException("The config path '$path' could not be found or is not readable.");
         }
         
         $this->paths[] = $path;
@@ -77,7 +86,9 @@ class Config extends Repository
      */      
     public function mergeConfigFile($file_with_path)
     {
-        if (file_exists($file_with_path)){
+        if (!(file_exists($file_with_path) && is_readable($file_with_path))) {
+            throw new FileNotFoundException("The config file '$file_with_path' could not be found or is not readable.");
+        } else {
             // Use null key to merge the entire configuration array
             $this->mergeItems(null, require $file_with_path);
         }
