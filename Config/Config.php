@@ -2,25 +2,25 @@
 
 /**
  * Config
- * 
+ *
  * Flexible configuration class, which can load and merge config settings from multiple files and sources.
  *
  * @package   userfrosting/config
  * @link      https://github.com/userfrosting/config
  * @author    Alexander Weissman
- * @license   https://github.com/userfrosting/UserFrosting/blob/master/licenses/UserFrosting.md (MIT License) 
+ * @license   https://github.com/userfrosting/UserFrosting/blob/master/licenses/UserFrosting.md (MIT License)
  * @link      http://blog.madewithlove.be/post/illuminate-config-v5/
  */
 namespace UserFrosting\Config;
 
 use Illuminate\Config\Repository;
 use UserFrosting\Support\Exception\FileNotFoundException;
- 
+
 class Config extends Repository
 {
 
     /**
-     * @var array an array of paths to search for config files.
+     * @var string[] an array of paths to search for config files.
      */
     protected $paths = [];
 
@@ -28,36 +28,37 @@ class Config extends Repository
      * Add a path to search for configuration files.
      *
      * @param string $path
-     */    
+     */
     public function addPath($path)
     {
         if (!is_dir($path)) {
             throw new FileNotFoundException("The config path '$path' could not be found or is not readable.");
         }
-        
+
         $this->paths[] = $path;
     }
-    
+
     /**
      * Set an array of paths to search for configuration files.
      *
-     * @param array $paths
-     */       
+     * @param string[] $paths
+     */
     public function setPaths(array $paths = [])
     {
         $this->paths = $paths;
+        return $this;
     }
-    
+
     /**
      * Return a list of all paths to search for configuration files.
      *
-     * @return array
-     */       
+     * @return string[]
+     */
     public function getPaths()
     {
         return $this->paths;
     }
-    
+
     /**
      * Recursively merge configuration values (scalar or array) into this repository.
      *
@@ -66,34 +67,38 @@ class Config extends Repository
      * Nested keys may be specified using dot syntax.
      * @param string|null $key
      * @param mixed $items
-     */       
+     */
     public function mergeItems($key = null, $items)
     {
-        $target_values = array_get($this->items, $key);
-        if (is_array($target_values)) {
-            $modified_values = array_replace_recursive($target_values, $items);
+        $targetValues = array_get($this->items, $key);
+        if (is_array($targetValues)) {
+            $modifiedValues = array_replace_recursive($targetValues, $items);
         } else {
-            $modified_values = $items;
+            $modifiedValues = $items;
         }
-        
-        array_set($this->items, $key, $modified_values);
+
+        array_set($this->items, $key, $modifiedValues);
+        return $this;
     }
-    
+
     /**
      * Recursively merge a configuration file into this repository.
      *
-     * @param string $file_with_path
-     */      
-    public function mergeConfigFile($file_with_path)
+     * @param string $fileWithPath
+     */
+    public function mergeConfigFile($fileWithPath)
     {
-        if (!(file_exists($file_with_path) && is_readable($file_with_path))) {
-            throw new FileNotFoundException("The config file '$file_with_path' could not be found or is not readable.");
-        } else {
+        if (file_exists($fileWithPath)) {
+            if (!is_readable($fileWithPath)) {
+                throw new FileNotFoundException("The config file '$fileWithPath' exists, but it could not be read.");
+            }
+
             // Use null key to merge the entire configuration array
-            $this->mergeItems(null, require $file_with_path);
+            $this->mergeItems(null, require $fileWithPath);
         }
+        return $this;
     }
-    
+
     /**
      * Load the configuration items from all of the files.
      *
@@ -104,12 +109,12 @@ class Config extends Repository
         // Search each config path for default and environment-specific config files
         foreach ($this->paths as $path) {
             // Merge in default config file
-            $default_file = $this->getConfigurationFile($path);
-            $this->mergeConfigFile($default_file);
-            
+            $defaultFile = $this->getConfigurationFile($path);
+            $this->mergeConfigFile($defaultFile);
+
             // Then, merge in environment-specific configuration file, if it exists
-            $env_file = $this->getConfigurationFile($path, $environment);
-            $this->mergeConfigFile($env_file);
+            $envFile = $this->getConfigurationFile($path, $environment);
+            $this->mergeConfigFile($envFile);
         }
     }
 
@@ -132,8 +137,8 @@ class Config extends Repository
         }
 
         // Allows paths with or without trailing slash, in both *nix and Windows
-        $file_with_path = rtrim($path, '/\\') . '/' . $filename;
-        
-        return $file_with_path;
+        $fileWithPath = rtrim($path, '/\\') . '/' . $filename;
+
+        return $fileWithPath;
     }
 }
