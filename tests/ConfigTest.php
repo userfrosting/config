@@ -2,12 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 use RocketTheme\Toolbox\ResourceLocator\UniformResourceLocator;
-use UserFrosting\Config\Config;
+use UserFrosting\Config\ConfigPathBuilder;
 use UserFrosting\Support\Repository\Loader\ArrayFileLoader;
-use UserFrosting\Support\Repository\Loader\YamlFileLoader;
-use UserFrosting\Support\Repository\PathBuilder\SimpleGlobBuilder;
 
-class ConfigLoaderTest extends TestCase
+class ConfigTest extends TestCase
 {
     protected $basePath;
 
@@ -26,16 +24,14 @@ class ConfigLoaderTest extends TestCase
 
     public function testConfigDefault()
     {
-        $config = new Config();
+        // Arrange
+        $builder = new ConfigPathBuilder($this->locator, 'config://');
+        $loader = new ArrayFileLoader($builder->buildPaths());
 
-        // Add search paths for all config files.  Include them in reverse order to allow config files added later to override earlier files.
-        $configPaths = array_reverse($this->locator->findResources('config://', true, true));
+        // Act
+        $data = $loader->load();
 
-        $config->setPaths($configPaths);
-
-        $config->loadConfigurationFiles();
-
-        $this->assertEquals($config->all(), [
+        $this->assertEquals($data, [
             'site' => [
                 'AdminLTE' => [
                     'skin' => 'blue'
@@ -99,16 +95,14 @@ class ConfigLoaderTest extends TestCase
 
     public function testConfigEnvironmentMode()
     {
-        $config = new Config();
+        // Arrange
+        $builder = new ConfigPathBuilder($this->locator, 'config://');
+        $loader = new ArrayFileLoader($builder->buildPaths('production'));
 
-        // Add search paths for all config files.  Include them in reverse order to allow config files added later to override earlier files.
-        $configPaths = array_reverse($this->locator->findResources('config://', true, true));
+        // Act
+        $data = $loader->load();
 
-        $config->setPaths($configPaths);
-
-        $config->loadConfigurationFiles('production');
-
-        $this->assertEquals($config->all(), [
+        $this->assertEquals($data, [
             'site' => [
                 'AdminLTE' => [
                     'skin' => 'blue'
