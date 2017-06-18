@@ -1,20 +1,20 @@
 <?php
-
 /**
- * Config
+ * UserFrosting (http://www.userfrosting.com)
  *
- * Flexible configuration class, which can load and merge config settings from multiple files and sources.
- *
- * @package   userfrosting/config
  * @link      https://github.com/userfrosting/config
- * @author    Alexander Weissman
- * @license   https://github.com/userfrosting/UserFrosting/blob/master/licenses/UserFrosting.md (MIT License)
- * @link      http://blog.madewithlove.be/post/illuminate-config-v5/
+ * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
  */
 namespace UserFrosting\Config;
 
 use UserFrosting\Support\Repository\PathBuilder\PathBuilder;
 
+/**
+ * Config path builder, which builds a list of files for a given config environment.
+ *
+ * @author Alexander Weissman (https://alexanderweissman.com)
+ * @link http://blog.madewithlove.be/post/illuminate-config-v5/
+ */
 class ConfigPathBuilder extends PathBuilder
 {
     /**
