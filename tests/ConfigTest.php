@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use RocketTheme\Toolbox\ResourceLocator\UniformResourceLocator;
+use UserFrosting\UniformResourceLocator\ResourceLocator;
 use UserFrosting\Config\ConfigPathBuilder;
 use UserFrosting\Support\Repository\Loader\ArrayFileLoader;
 
@@ -14,12 +14,13 @@ class ConfigTest extends TestCase
     public function setUp()
     {
         $this->basePath = __DIR__ . '/data';
-        $this->locator = new UniformResourceLocator($this->basePath);
+        $this->locator = new ResourceLocator($this->basePath);
 
-        // Add them one at a time to simulate how they are added in SprinkleManager
-        $this->locator->addPath('config', '', 'core/config');
-        $this->locator->addPath('config', '', 'account/config');
-        $this->locator->addPath('config', '', 'admin/config');
+        // Add them as locations to simulate how they are added in SprinkleManager
+        $this->locator->registerLocation('core');
+        $this->locator->registerLocation('account');
+        $this->locator->registerLocation('admin');
+        $this->locator->registerStream('config');
     }
 
     public function testConfigDefault()

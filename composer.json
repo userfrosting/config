@@ -11,9 +11,16 @@
             "homepage": "https://alexanderweissman.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url":  "git@github.com:userfrosting/uniformresourcelocator.git"
+        }
+    ],
     "require": {
         "php": ">=5.6",
         "userfrosting/support": "~4.1.0",
+        "userfrosting/uniformresourcelocator": "dev-develop",
         "vlucas/phpdotenv": "~2.2.0"
     },
     "require-dev": {
