@@ -1,5 +1,8 @@
 # Config module for UserFrosting 4.1
 
+[![Build Status](https://travis-ci.org/userfrosting/config.svg?branch=master)](https://travis-ci.org/userfrosting/config)
+[![Join the chat at https://chat.userfrosting.com/channel/support](https://demo.rocket.chat/images/join-chat.svg)](https://chat.userfrosting.com/channel/support)
+
 ## Usage
 
 Create a file `default.php`, in a directory `/path/to/core/config/`:
