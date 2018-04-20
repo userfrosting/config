@@ -38,12 +38,13 @@ You can generate an ordered list of these configuration files using the `ConfigP
 
 ### Path builder
 
-Create `UniformResourceLocator` and `ConfigPathBuilder` classes to build a list of configuration files:
+Create `ResourceLocator` and `ConfigPathBuilder` classes to build a list of configuration files:
 
 ```
-$locator = new UniformResourceLocator(__DIR__);
-$locator->addPath('config', '', 'path/to/core/config');
-$locator->addPath('config', '', 'path/to/plugin/config');
+$locator = new ResourceLocator(__DIR__);
+$locator->registerLocation('core', 'path/to/core');
+$locator->registerLocation('plugin', 'path/to/plugin');
+$locator->registerStream('config', '', 'config/');
 
 $builder = new ConfigPathBuilder($locator, 'config://');
 $paths = $builder->buildPaths();
@@ -92,5 +93,5 @@ $paths = $builder->buildPaths('development');
 ## Testing
 
 ```
-phpunit --bootstrap tests/bootstrap.php tests
+vendor/bin/phpunit --bootstrap tests/bootstrap.php tests
 ```
