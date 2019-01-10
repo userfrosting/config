@@ -3,8 +3,9 @@
  * UserFrosting (http://www.userfrosting.com)
  *
  * @link      https://github.com/userfrosting/config
- * @license   https://github.com/userfrosting/UserFrosting/blob/master/LICENSE.md (MIT License)
+ * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
  */
+
 namespace UserFrosting\Config;
 
 use UserFrosting\Support\Repository\PathBuilder\PathBuilder;

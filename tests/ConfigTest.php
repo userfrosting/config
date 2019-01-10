@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * UserFrosting (http://www.userfrosting.com)
+ *
+ * @link      https://github.com/userfrosting/config
+ * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
+ */
 use PHPUnit\Framework\TestCase;
 use UserFrosting\UniformResourceLocator\ResourceLocator;
 use UserFrosting\Config\ConfigPathBuilder;
@@ -39,20 +44,20 @@ class ConfigTest extends TestCase
                 ],
                 'analytics' => [
                     'google' => [
-                        'code' => '',
+                        'code'    => '',
                         'enabled' => false
                     ]
                 ],
                 'author' => 'Author',
-                'csrf' => null,
-                'debug' => [
+                'csrf'   => null,
+                'debug'  => [
                     'ajax' => false,
                     'info' => true
                 ],
                 'locales' => [
                     'available' => [
                         'en_US' => 'English',
-                        'ar' => 'العربية',
+                        'ar'    => 'العربية',
                         'fr_FR' => 'Français',
                         'pt_PT' => 'Português',
                         'de_DE' => 'Deutsch',
@@ -61,34 +66,34 @@ class ConfigTest extends TestCase
                     'default' => 'en_US'
                 ],
                 'title' => 'UserFrosting',
-                'uri' => [
+                'uri'   => [
                     'base' => [
-                        'host' => 'localhost',
+                        'host'   => 'localhost',
                         'scheme' => 'http',
-                        'port' => null,
-                        'path' => 'myProject'
+                        'port'   => null,
+                        'path'   => 'myProject'
                     ],
-                    'author' => 'http://www.userfrosting.com',
+                    'author'    => 'http://www.userfrosting.com',
                     'publisher' => ''
                 ],
                 'login' => [
                     'enable_email' => true
                 ],
                 'registration' => [
-                    'enabled' => true,
-                    'captcha' => true,
+                    'enabled'                    => true,
+                    'captcha'                    => true,
                     'require_email_verification' => true,
-                    'user_defaults' => [
+                    'user_defaults'              => [
                         'locale' => 'en_US',
-                        'group' => 'terran',
-                        'roles' => [
+                        'group'  => 'terran',
+                        'roles'  => [
                             'user' => true
                         ]
                     ]
                 ]
             ],
             'timezone' => 'America/New_York',
-            'debug' => [
+            'debug'    => [
                 'auth' => true
             ]
         ]);
@@ -110,20 +115,20 @@ class ConfigTest extends TestCase
                 ],
                 'analytics' => [
                     'google' => [
-                        'code' => '',
+                        'code'    => '',
                         'enabled' => true
                     ]
                 ],
                 'author' => 'Author',
-                'csrf' => null,
-                'debug' => [
+                'csrf'   => null,
+                'debug'  => [
                     'ajax' => false,
                     'info' => false
                 ],
                 'locales' => [
                     'available' => [
                         'en_US' => 'English',
-                        'ar' => 'العربية',
+                        'ar'    => 'العربية',
                         'fr_FR' => 'Français',
                         'pt_PT' => 'Português',
                         'de_DE' => 'Deutsch',
@@ -132,34 +137,34 @@ class ConfigTest extends TestCase
                     'default' => 'en_US'
                 ],
                 'title' => 'UserFrosting',
-                'uri' => [
+                'uri'   => [
                     'base' => [
-                        'host' => 'localhost',
+                        'host'   => 'localhost',
                         'scheme' => 'http',
-                        'port' => null,
-                        'path' => 'myProject'
+                        'port'   => null,
+                        'path'   => 'myProject'
                     ],
-                    'author' => 'http://www.userfrosting.com',
+                    'author'    => 'http://www.userfrosting.com',
                     'publisher' => ''
                 ],
                 'login' => [
                     'enable_email' => false
                 ],
                 'registration' => [
-                    'enabled' => false,
-                    'captcha' => false,
+                    'enabled'                    => false,
+                    'captcha'                    => false,
                     'require_email_verification' => true,
-                    'user_defaults' => [
+                    'user_defaults'              => [
                         'locale' => 'en_US',
-                        'group' => 'terran',
-                        'roles' => [
+                        'group'  => 'terran',
+                        'roles'  => [
                             'user' => true
                         ]
                     ]
                 ]
             ],
             'timezone' => 'America/New_York',
-            'debug' => [
+            'debug'    => [
                 'auth' => false
             ]
         ]);

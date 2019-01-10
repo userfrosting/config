@@ -1,19 +1,22 @@
 <?php
-
 /**
- * Default configuration file for your project, which can be overridden by environment-specific configuration files.
+ * UserFrosting (http://www.userfrosting.com)
  *
- * For example, you can override values in this config file by creating your own `development.php` config file in this same directory.
+ * @link      https://github.com/userfrosting/config
+ * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
  */
- 
-return [      
+
+/*
+ * Default configuration file for your project, which can be overridden by environment-specific configuration files.
+ */
+return [
     'site' => [
-        'AdminLTE' =>  [
-            'skin' => "blue"
+        'AdminLTE' => [
+            'skin' => 'blue'
         ],
         'analytics' => [
             'google' => [
-                'code' => '',
+                'code'    => '',
                 'enabled' => false
             ]
         ],
@@ -23,7 +26,7 @@ return [
             'ajax' => false,
             'info' => true
         ],
-        'locales' =>  [
+        'locales' => [
             'available' => [
                 'en_US' => 'English',
                 'ar'    => 'العربية',
@@ -35,7 +38,7 @@ return [
             // This can be a comma-separated list, to load multiple fallback locales
             'default' => 'en_US'
         ],
-        'title'     =>      'UserFrosting',
+        'title'     => 'UserFrosting',
         // URLs
         'uri' => [
             'base' => [
@@ -50,4 +53,3 @@ return [
     ],
     'timezone' => 'America/New_York'
 ];
-    

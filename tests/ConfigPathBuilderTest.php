@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * UserFrosting (http://www.userfrosting.com)
+ *
+ * @link      https://github.com/userfrosting/config
+ * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
+ */
 use PHPUnit\Framework\TestCase;
 use UserFrosting\UniformResourceLocator\ResourceLocator;
 use UserFrosting\Config\ConfigPathBuilder;
