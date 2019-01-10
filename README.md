@@ -1,6 +1,7 @@
-# Config module for UserFrosting 4.1
+# Config module for UserFrosting 4
 
 [![Build Status](https://travis-ci.org/userfrosting/config.svg?branch=master)](https://travis-ci.org/userfrosting/config)
+[![codecov](https://codecov.io/gh/userfrosting/config/branch/master/graph/badge.svg)](https://codecov.io/gh/userfrosting/config)
 [![Join the chat at https://chat.userfrosting.com/channel/support](https://demo.rocket.chat/images/join-chat.svg)](https://chat.userfrosting.com/channel/support)
 
 ## Usage
