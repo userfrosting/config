@@ -93,5 +93,5 @@ $paths = $builder->buildPaths('development');
 ## Testing
 
 ```
-vendor/bin/phpunit --bootstrap tests/bootstrap.php tests
+vendor/bin/phpunit
 ```
