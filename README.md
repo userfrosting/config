@@ -1,8 +1,11 @@
 # Config module for UserFrosting 4
 
+[![Latest Version](https://img.shields.io/github/release/userfrosting/config.svg)](https://github.com/userfrosting/config/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
 [![Build Status](https://travis-ci.org/userfrosting/config.svg?branch=master)](https://travis-ci.org/userfrosting/config)
 [![codecov](https://codecov.io/gh/userfrosting/config/branch/master/graph/badge.svg)](https://codecov.io/gh/userfrosting/config)
 [![Join the chat at https://chat.userfrosting.com/channel/support](https://demo.rocket.chat/images/join-chat.svg)](https://chat.userfrosting.com/channel/support)
+[![Donate](https://img.shields.io/badge/Open%20Collective-Donate-blue.svg)](https://opencollective.com/userfrosting#backer)
 
 ## Usage
 
