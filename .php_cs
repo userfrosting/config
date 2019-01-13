@@ -1,8 +1,9 @@
 <?php
 
-$header = 'UserFrosting (http://www.userfrosting.com)
+$header = 'UserFrosting Config (http://www.userfrosting.com)
 
 @link      https://github.com/userfrosting/config
+@copyright Copyright (c) 2013-2019 Alexander Weissman
 @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)';
 
 $rules = [
@@ -101,7 +102,7 @@ $rules = [
 ];
 
 $finder = PhpCsFixer\Finder::create()
-    ->in([__DIR__ . '/src', __DIR__ . '/tests']);
+    ->in([__DIR__ . '/src']);
 
 return PhpCsFixer\Config::create()
     ->setRules($rules)

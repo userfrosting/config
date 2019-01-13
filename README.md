@@ -94,8 +94,6 @@ To merge this in, you would call:
 $paths = $builder->buildPaths('development');
 ```
 
-## Testing
+## [Style Guide](STYLE-GUIDE.md)
 
-```
-vendor/bin/phpunit
-```
+## [Testing](RUNNING_TESTS.md)
