@@ -1,10 +1,12 @@
 <?php
-/**
+
+/*
  * UserFrosting Config (http://www.userfrosting.com)
  *
  * @link      https://github.com/userfrosting/config
  * @copyright Copyright (c) 2013-2019 Alexander Weissman
  * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
+ *
  */
 
 namespace UserFrosting\Config;
@@ -15,6 +17,7 @@ use UserFrosting\Support\Repository\PathBuilder\PathBuilder;
  * Config path builder, which builds a list of files for a given config environment.
  *
  * @author Alexander Weissman (https://alexanderweissman.com)
+ *
  * @link http://blog.madewithlove.be/post/illuminate-config-v5/
  */
 class ConfigPathBuilder extends PathBuilder
@@ -32,12 +35,12 @@ class ConfigPathBuilder extends PathBuilder
 
         $filePaths = [];
         foreach ($searchPaths as $path) {
-            $cleanPath = rtrim($path, '/\\') . '/';
+            $cleanPath = rtrim($path, '/\\').'/';
 
-            $filePaths[] = $cleanPath . 'default.php';
+            $filePaths[] = $cleanPath.'default.php';
 
             if ($environment) {
-                $filePaths[] = $cleanPath . $environment . '.php';
+                $filePaths[] = $cleanPath.$environment.'.php';
             }
         }
 
