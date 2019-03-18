@@ -6,7 +6,6 @@
  * @link      https://github.com/userfrosting/config
  * @copyright Copyright (c) 2013-2019 Alexander Weissman
  * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
- *
  */
 
 use PHPUnit\Framework\TestCase;
