@@ -2,10 +2,28 @@
 
 [![Latest Version](https://img.shields.io/github/release/userfrosting/config.svg)](https://github.com/userfrosting/config/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
-[![Build Status](https://travis-ci.org/userfrosting/config.svg?branch=master)](https://travis-ci.org/userfrosting/config)
-[![codecov](https://codecov.io/gh/userfrosting/config/branch/master/graph/badge.svg)](https://codecov.io/gh/userfrosting/config)
 [![Join the chat at https://chat.userfrosting.com/channel/support](https://demo.rocket.chat/images/join-chat.svg)](https://chat.userfrosting.com/channel/support)
 [![Donate](https://img.shields.io/badge/Open%20Collective-Donate-blue.svg)](https://opencollective.com/userfrosting#backer)
+
+| Branch | Build | Coverage | Style |
+| ------ |:-----:|:--------:|:-----:|
+| [master][Config]  | [![][config-master-build]][config-travis] | [![][config-master-codecov]][config-codecov] | [![][config-style-master]][config-style] |
+| [develop][config-develop] | [![][config-develop-build]][config-travis] | [![][config-develop-codecov]][config-codecov] | [![][config-style-develop]][config-style] |
+
+<!-- Links -->
+[Config]: https://github.com/userfrosting/config
+[config-develop]: https://github.com/userfrosting/config/tree/develop
+[config-version]: https://img.shields.io/github/release/userfrosting/config.svg
+[config-master-build]: https://travis-ci.org/userfrosting/config.svg?branch=master
+[config-master-codecov]: https://codecov.io/gh/userfrosting/config/branch/master/graph/badge.svg
+[config-develop-build]: https://travis-ci.org/userfrosting/config.svg?branch=develop
+[config-develop-codecov]: https://codecov.io/gh/userfrosting/config/branch/develop/graph/badge.svg
+[config-releases]: https://github.com/userfrosting/config/releases
+[config-travis]: https://travis-ci.org/userfrosting/config
+[config-codecov]: https://codecov.io/gh/userfrosting/config
+[config-style-master]: https://github.styleci.io/repos/54955134/shield?branch=master&style=flat
+[config-style-develop]: https://github.styleci.io/repos/54955134/shield?branch=develop&style=flat
+[config-style]: https://github.styleci.io/repos/54955134
 
 ## Usage
 
