@@ -1,14 +1,17 @@
 <?php
-/**
- * UserFrosting (http://www.userfrosting.com)
+
+/*
+ * UserFrosting Config (http://www.userfrosting.com)
  *
  * @link      https://github.com/userfrosting/config
+ * @copyright Copyright (c) 2013-2019 Alexander Weissman
  * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
  */
+
 use PHPUnit\Framework\TestCase;
-use UserFrosting\UniformResourceLocator\ResourceLocator;
 use UserFrosting\Config\ConfigPathBuilder;
 use UserFrosting\Support\Repository\Loader\ArrayFileLoader;
+use UserFrosting\UniformResourceLocator\ResourceLocator;
 
 class ConfigTest extends TestCase
 {
@@ -18,7 +21,7 @@ class ConfigTest extends TestCase
 
     public function setUp()
     {
-        $this->basePath = __DIR__ . '/data';
+        $this->basePath = __DIR__.'/data';
         $this->locator = new ResourceLocator($this->basePath);
 
         // Add them as locations to simulate how they are added in SprinkleManager
@@ -40,19 +43,19 @@ class ConfigTest extends TestCase
         $this->assertEquals($data, [
             'site' => [
                 'AdminLTE' => [
-                    'skin' => 'blue'
+                    'skin' => 'blue',
                 ],
                 'analytics' => [
                     'google' => [
                         'code'    => '',
-                        'enabled' => false
-                    ]
+                        'enabled' => false,
+                    ],
                 ],
                 'author' => 'Author',
                 'csrf'   => null,
                 'debug'  => [
                     'ajax' => false,
-                    'info' => true
+                    'info' => true,
                 ],
                 'locales' => [
                     'available' => [
@@ -63,7 +66,7 @@ class ConfigTest extends TestCase
                         'de_DE' => 'Deutsch',
                         'th_TH' => 'ภาษาไทย',
                     ],
-                    'default' => 'en_US'
+                    'default' => 'en_US',
                 ],
                 'title' => 'UserFrosting',
                 'uri'   => [
@@ -71,13 +74,13 @@ class ConfigTest extends TestCase
                         'host'   => 'localhost',
                         'scheme' => 'http',
                         'port'   => null,
-                        'path'   => 'myProject'
+                        'path'   => 'myProject',
                     ],
                     'author'    => 'http://www.userfrosting.com',
-                    'publisher' => ''
+                    'publisher' => '',
                 ],
                 'login' => [
-                    'enable_email' => true
+                    'enable_email' => true,
                 ],
                 'registration' => [
                     'enabled'                    => true,
@@ -87,15 +90,15 @@ class ConfigTest extends TestCase
                         'locale' => 'en_US',
                         'group'  => 'terran',
                         'roles'  => [
-                            'user' => true
-                        ]
-                    ]
-                ]
+                            'user' => true,
+                        ],
+                    ],
+                ],
             ],
             'timezone' => 'America/New_York',
             'debug'    => [
-                'auth' => true
-            ]
+                'auth' => true,
+            ],
         ]);
     }
 
@@ -111,19 +114,19 @@ class ConfigTest extends TestCase
         $this->assertEquals($data, [
             'site' => [
                 'AdminLTE' => [
-                    'skin' => 'blue'
+                    'skin' => 'blue',
                 ],
                 'analytics' => [
                     'google' => [
                         'code'    => '',
-                        'enabled' => true
-                    ]
+                        'enabled' => true,
+                    ],
                 ],
                 'author' => 'Author',
                 'csrf'   => null,
                 'debug'  => [
                     'ajax' => false,
-                    'info' => false
+                    'info' => false,
                 ],
                 'locales' => [
                     'available' => [
@@ -134,7 +137,7 @@ class ConfigTest extends TestCase
                         'de_DE' => 'Deutsch',
                         'th_TH' => 'ภาษาไทย',
                     ],
-                    'default' => 'en_US'
+                    'default' => 'en_US',
                 ],
                 'title' => 'UserFrosting',
                 'uri'   => [
@@ -142,13 +145,13 @@ class ConfigTest extends TestCase
                         'host'   => 'localhost',
                         'scheme' => 'http',
                         'port'   => null,
-                        'path'   => 'myProject'
+                        'path'   => 'myProject',
                     ],
                     'author'    => 'http://www.userfrosting.com',
-                    'publisher' => ''
+                    'publisher' => '',
                 ],
                 'login' => [
-                    'enable_email' => false
+                    'enable_email' => false,
                 ],
                 'registration' => [
                     'enabled'                    => false,
@@ -158,15 +161,15 @@ class ConfigTest extends TestCase
                         'locale' => 'en_US',
                         'group'  => 'terran',
                         'roles'  => [
-                            'user' => true
-                        ]
-                    ]
-                ]
+                            'user' => true,
+                        ],
+                    ],
+                ],
             ],
             'timezone' => 'America/New_York',
             'debug'    => [
-                'auth' => false
-            ]
+                'auth' => false,
+            ],
         ]);
     }
 }

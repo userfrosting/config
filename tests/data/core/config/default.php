@@ -1,8 +1,10 @@
 <?php
-/**
- * UserFrosting (http://www.userfrosting.com)
+
+/*
+ * UserFrosting Config (http://www.userfrosting.com)
  *
  * @link      https://github.com/userfrosting/config
+ * @copyright Copyright (c) 2013-2019 Alexander Weissman
  * @license   https://github.com/userfrosting/config/blob/master/LICENSE.md (MIT License)
  */
 
@@ -12,19 +14,19 @@
 return [
     'site' => [
         'AdminLTE' => [
-            'skin' => 'blue'
+            'skin' => 'blue',
         ],
         'analytics' => [
             'google' => [
                 'code'    => '',
-                'enabled' => false
-            ]
+                'enabled' => false,
+            ],
         ],
         'author'    => 'Author',
         'csrf'      => null,
         'debug'     => [
             'ajax' => false,
-            'info' => true
+            'info' => true,
         ],
         'locales' => [
             'available' => [
@@ -33,10 +35,10 @@ return [
                 'fr_FR' => 'Français',
                 'pt_PT' => 'Português',
                 'de_DE' => 'Deutsch',
-                'th_TH' => 'ภาษาไทย'
+                'th_TH' => 'ภาษาไทย',
             ],
             // This can be a comma-separated list, to load multiple fallback locales
-            'default' => 'en_US'
+            'default' => 'en_US',
         ],
         'title'     => 'UserFrosting',
         // URLs
@@ -45,11 +47,11 @@ return [
                 'host'              => 'localhost',
                 'scheme'            => 'http',
                 'port'              => null,
-                'path'              => 'myProject'
+                'path'              => 'myProject',
             ],
             'author'            => 'http://www.userfrosting.com',
-            'publisher'         => ''
-        ]
+            'publisher'         => '',
+        ],
     ],
-    'timezone' => 'America/New_York'
+    'timezone' => 'America/New_York',
 ];
