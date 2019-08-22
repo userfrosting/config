@@ -17,16 +17,18 @@ use UserFrosting\Support\Repository\PathBuilder\PathBuilder;
  *
  * @author Alexander Weissman (https://alexanderweissman.com)
  *
- * @link http://blog.madewithlove.be/post/illuminate-config-v5/
+ * @see http://blog.madewithlove.be/post/illuminate-config-v5/
  */
 class ConfigPathBuilder extends PathBuilder
 {
     /**
      * Add path to default.php and environment mode file, if specified.
      *
+     * @param string|null $environment [defaul: null]
+     *
      * @return array
      */
-    public function buildPaths($environment = null)
+    public function buildPaths(?string $environment = null): array
     {
         // Get all paths from the locator that match the uri.
         // Put them in reverse order to allow later files to override earlier files.
@@ -38,7 +40,7 @@ class ConfigPathBuilder extends PathBuilder
 
             $filePaths[] = $cleanPath.'default.php';
 
-            if ($environment) {
+            if (!is_null($environment)) {
                 $filePaths[] = $cleanPath.$environment.'.php';
             }
         }
