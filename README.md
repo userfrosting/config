@@ -14,12 +14,12 @@
 [Config]: https://github.com/userfrosting/config
 [config-develop]: https://github.com/userfrosting/config/tree/develop
 [config-version]: https://img.shields.io/github/release/userfrosting/config.svg
-[config-master-build]: https://travis-ci.org/userfrosting/config.svg?branch=master
+[config-master-build]: https://github.com/userfrosting/config/workflows/Build/badge.svg?branch=master
 [config-master-codecov]: https://codecov.io/gh/userfrosting/config/branch/master/graph/badge.svg
-[config-develop-build]: https://travis-ci.org/userfrosting/config.svg?branch=develop
+[config-develop-build]: https://github.com/userfrosting/config/workflows/Build/badge.svg?branch=develop
 [config-develop-codecov]: https://codecov.io/gh/userfrosting/config/branch/develop/graph/badge.svg
 [config-releases]: https://github.com/userfrosting/config/releases
-[config-travis]: https://travis-ci.org/userfrosting/config
+[config-travis]: https://github.com/userfrosting/config/actions?query=workflow%3ABuild
 [config-codecov]: https://codecov.io/gh/userfrosting/config
 [config-style-master]: https://github.styleci.io/repos/54955134/shield?branch=master&style=flat
 [config-style-develop]: https://github.styleci.io/repos/54955134/shield?branch=develop&style=flat
