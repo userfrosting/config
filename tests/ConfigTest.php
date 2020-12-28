@@ -19,7 +19,7 @@ class ConfigTest extends TestCase
 
     protected $locator;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->basePath = __DIR__.'/data';
         $this->locator = new ResourceLocator($this->basePath);
